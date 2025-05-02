@@ -118,7 +118,7 @@ export async function authenticate(
     await signIn('credentials', formData);
   } catch (error) {
     if (error instanceof AuthError) {
-      // @ts-expect-error
+      // @ts-expect-error: Should expect error
       switch (error.type) {
         case 'CredentialsSignin':
           return 'Invalid credentials.';
